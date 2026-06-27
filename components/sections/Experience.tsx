@@ -40,7 +40,7 @@ export default function Experience() {
 
             <div className="mt-3 flex items-center gap-2 text-zinc-400">
               <Building2 size={18} />
-              XYZ
+              Codezyng Private Limited, Udupi
             </div>
 
             <div className="mt-2 flex items-center gap-2 text-zinc-400">
