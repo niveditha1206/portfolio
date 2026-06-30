@@ -78,7 +78,7 @@ export default function Projects() {
               <div className="flex items-center gap-3">
                 <Building2 className="text-blue-500" />
 
-                <h3 className="text-3xl font-bold">Kesef</h3>
+                <h3 className="text-3xl font-bold">Financing Platform</h3>
               </div>
 
               <p className="mt-3 text-blue-400">
@@ -97,7 +97,7 @@ export default function Projects() {
             <h4 className="text-2xl font-semibold">Overview</h4>
 
             <p className="mt-5 leading-8 text-zinc-400">
-              Kesef is an internal financing management platform used for
+              This is an internal financing management platform used for
               managing financing deals, clients, payments, reports, brokered
               deals, user administration, and application configuration. The
               application supports role-based workflows for administrators,
@@ -180,9 +180,7 @@ export default function Projects() {
         <div className="mt-16 rounded-3xl border border-zinc-800 bg-zinc-900 p-10">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-3xl font-bold">
-                Bridge X Capital Calculator
-              </h3>
+              <h3 className="text-3xl font-bold">Funding Calculator</h3>
 
               <p className="mt-3 text-blue-400">
                 Funding Eligibility Calculator
@@ -193,11 +191,32 @@ export default function Projects() {
           </div>
 
           <p className="mt-8 leading-8 text-zinc-400">
-            Developed a responsive funding calculator that estimates business
-            funding eligibility using monthly revenue and business duration.
-            Built a clean user experience with form validation and seamless
-            navigation to the funding application.
+            Built a responsive Funding Calculator using React, TypeScript,
+            Material UI, and Google Analytics 4 (gtag). Implemented real-time
+            funding calculations, responsive UI, UTM parameter preservation, and
+            event tracking to measure user engagement and CTA interactions.
           </p>
+          <div className="mt-14">
+            <h4 className="text-2xl font-semibold">My Contributions</h4>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {[
+                "Developed a responsive single-page application using React, TypeScript, and Material UI.",
+                "Integrated Google Analytics 4 (gtag) to track user interactions, including CTA clicks and user engagement events.",
+                "Implemented real-time funding calculations based on user-provided business metrics.",
+                "Built reusable UI components with formatted currency inputs, sliders, and smooth scrolling interactions.",
+                "Preserved UTM parameters during redirection to the funding application to support marketing attribution.",
+                "Optimized the user experience across desktop, tablet, and mobile devices.",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-xl border border-zinc-800 p-5"
+                >
+                  ✓ {item}
+                </div>
+              ))}
+            </div>
+          </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
             {[

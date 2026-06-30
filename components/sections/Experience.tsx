@@ -110,7 +110,7 @@ export default function Experience() {
 
             <div className="rounded-2xl border border-zinc-800 p-6">
               <h5 className="text-lg font-semibold">
-                Bridge X Capital Calculator
+                MCA Calculator
               </h5>
 
               <p className="mt-3 text-zinc-400">

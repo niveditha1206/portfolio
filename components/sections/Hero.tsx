@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight, Download } from "lucide-react";
+import { socialLinks } from "@/lib/constants";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Hero() {
   return (
@@ -79,6 +81,27 @@ export default function Hero() {
               Resume
             </a>
           </motion.div>
+          <div className="mt-8 flex items-center gap-5">
+            <a
+              href={socialLinks.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="text-slate-400 transition hover:text-white"
+            >
+              <FaGithub size={28} />
+            </a>
+
+            <a
+              href={socialLinks.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-slate-400 transition hover:text-blue-400"
+            >
+              <FaLinkedin size={28} />
+            </a>
+          </div>
 
           {/* Tech Stack */}
           <motion.div
