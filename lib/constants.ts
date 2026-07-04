@@ -34,13 +34,12 @@ export interface Project {
   highlights: string[];
   github?: string;
   live?: string;
-  image: string;
 }
 
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Kesef",
+    title: "Financing Platform",
     description:
       "Enterprise financing management platform for managing clients, deals, payments, reports, and administrative workflows with role-based access control.",
     techStack: [
@@ -58,13 +57,12 @@ export const projects: Project[] = [
       "Implemented client, deal, payment, and reporting workflows.",
       "Managed application state using Redux Toolkit and React Query.",
     ],
-    image: "/projects/kesef.png",
   },
   {
     id: 2,
-    title: "MCA Calculator",
+    title: "Funding Calculator",
     description:
-      "Responsive Merchant Cash Advance (MCA) calculator that estimates funding eligibility based on monthly revenue and business duration.",
+      "Responsive Merchant Cash Advance (Funding) calculator that estimates funding eligibility based on monthly revenue and business duration.",
     techStack: [
       "React",
       "TypeScript",
@@ -79,11 +77,10 @@ export const projects: Project[] = [
       "Integrated Google Analytics (gtag) event tracking.",
       "Preserved UTM parameters during application redirection.",
     ],
-    image: "/projects/mca-calculator.png",
   },
   {
     id: 3,
-    title: "Buzz Digital Solutions Website",
+    title: "Corporate Marketing Website",
     description:
       "Corporate website showcasing digital signage solutions with responsive layouts, animations, and lead generation features.",
     techStack: [
@@ -100,6 +97,49 @@ export const projects: Project[] = [
       "Integrated contact form with Google Sheets API.",
       "Optimized for SEO and performance.",
     ],
-    image: "/projects/buzz.png",
   },
 ];
+
+export const experience = {
+  title: "Software Engineer I",
+  company: "Codezyng Private Limited",
+  location: "Udupi",
+  duration: "March 2023 – Present",
+  tenure: "2+ Years",
+  responsibilities: [
+    "Developed enterprise web applications using React, TypeScript, and modern frontend technologies.",
+    "Built reusable UI components to improve consistency and maintainability across the application.",
+    "Integrated REST APIs using Axios and managed server state with TanStack React Query.",
+    "Managed application state using Redux Toolkit and implemented authentication and role-based access.",
+    "Collaborated with backend developers, QA engineers, and product teams to deliver new features.",
+    "Optimized application performance and improved user experience through efficient rendering and reusable architecture.",
+  ],
+  projects: [
+    {
+      title: "Financing Platform",
+      description:
+        "Enterprise financing platform for managing clients, financing deals, payments, reports, brokered deals, user management, and role-based workflows.",
+    },
+    {
+      title: "Funding Calculator",
+      description:
+        "Funding calculator that estimates business funding eligibility based on monthly revenue and business duration, providing a seamless lead generation flow.",
+    },
+  ],
+  technologies: [
+    "React",
+    "TypeScript",
+    "JavaScript",
+    "Next.js",
+    "Redux Toolkit",
+    "React Query",
+    "Material UI",
+    "Tailwind CSS",
+    "Axios",
+    "React Hook Form",
+    "Yup",
+    "Git",
+    "GitHub",
+    "Vite",
+  ],
+};
