@@ -6,8 +6,8 @@ import { projects } from "../../lib/constants";
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-28">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="projects" className="scroll-mt-20 px-4 md:px-6 py-8">
+      <div className="mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

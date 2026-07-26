@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="flex min-h-screen items-center justify-center px-6"
+      className="scroll-mt-20 flex min-h-screen items-center justify-center px-4 md:px-6"
     >
       <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2">
         {/* Left Content */}
@@ -72,14 +72,7 @@ export default function Hero() {
               <ArrowRight size={18} />
             </a>
 
-            <a
-              href="/resume.pdf"
-              download
-              className="flex items-center gap-2 rounded-xl border border-zinc-700 px-6 py-3 font-medium text-white transition hover:border-blue-500 hover:text-blue-400"
-            >
-              <Download size={18} />
-              Resume
-            </a>
+            
           </motion.div>
           <div className="mt-8 flex items-center gap-5">
             <a
@@ -135,9 +128,9 @@ export default function Hero() {
           transition={{ delay: 0.5 }}
           className="flex justify-center"
         >
-          <div className="relative h-95 w-95 overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900 shadow-2xl">
+          <div className="relative h-96 w-72 overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900 shadow-2xl">
             <Image
-              src="/images/profile.jpg"
+              src="/Niveditha.jpg"
               alt="Niveditha Nandakumar"
               fill
               priority

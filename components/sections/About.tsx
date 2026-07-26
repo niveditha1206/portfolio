@@ -28,7 +28,8 @@ const highlights = [
 
 export default function About() {
   return (
-    <section id="about" className="mx-auto max-w-7xl px-6 py-28">
+    <section id="about" className="scroll-mt-20 px-4 md:px-6 py-8">
+      <div className="mx-auto max-w-7xl">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -78,6 +79,7 @@ export default function About() {
             </motion.div>
           );
         })}
+      </div>
       </div>
     </section>
   );
