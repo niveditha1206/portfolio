@@ -37,7 +37,8 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="mx-auto max-w-7xl px-6 py-16">
+    <section id="skills" className="scroll-mt-20 px-4 md:px-6 py-8">
+      <div className="mx-auto max-w-7xl">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -87,6 +88,7 @@ export default function Skills() {
             </motion.div>
           );
         })}
+      </div>
       </div>
     </section>
   );

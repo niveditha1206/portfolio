@@ -1,12 +1,14 @@
 "use client";
 
 import { experience } from "@/lib/constants";
+import { getDurationInYears } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { CalendarDays, Building2 } from "lucide-react";
 
 export default function Experience() {
   return (
-    <section id="experience" className="mx-auto max-w-7xl px-6 py-28">
+    <section id="experience" className="scroll-mt-20 px-4 md:px-6 py-8">
+      <div className="mx-auto max-w-7xl">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -15,7 +17,7 @@ export default function Experience() {
       >
         <p className="mb-2 font-semibold text-blue-500">EXPERIENCE</p>
         <h2 className="text-4xl font-bold text-white">
-          Professio nal Experience
+          Professional Experience
         </h2>
         <p className="mt-4 max-w-3xl text-lg text-zinc-400">
           Over the past two years, I've contributed to enterprise applications
@@ -31,22 +33,23 @@ export default function Experience() {
         transition={{ delay: 0.2 }}
         className="mt-14 rounded-3xl border border-zinc-800 bg-zinc-900 p-8"
       >
-        <div className="flex flex-col justify-between gap-6 lg:flex-row">
-          <div>
-            <h3 className="text-2xl font-bold">{experience.title}</h3>
-            <div className="mt-3 flex items-center gap-2 text-zinc-400">
-              <Building2 size={18} />
-              {experience.company}, {experience.location}
-            </div>
-            <div className="mt-2 flex items-center gap-2 text-zinc-400">
-              <CalendarDays size={18} />
-              {experience.duration}
+        <div className="flex justify-between">
+          <div className="flex flex-col justify-between gap-6 lg:flex-row">
+            <div>
+              <h3 className="text-2xl font-bold">{experience.title}</h3>
+              <div className="mt-3 flex items-center gap-2 text-zinc-400">
+                <Building2 size={18} />
+                {experience.company}, {experience.location}
+              </div>
+              <div className="mt-2 flex items-center gap-2 text-zinc-400">
+                <CalendarDays size={18} />
+                {experience.duration}
+              </div>
             </div>
           </div>
-
-          <div className="rounded-xl bg-blue-600/10 px-5 py-3 text-blue-400">
-            {experience.tenure}
-          </div>
+        <div className="rounded-xl bg-blue-600/10 px-5 py-3 text-blue-400 h-[50px]">
+  {getDurationInYears("2024-03-01")}
+        </div>
         </div>
 
         <div className="mt-10">
@@ -87,6 +90,7 @@ export default function Experience() {
           </div>
         </div>
       </motion.div>
+      </div>
     </section>
   );
 }

@@ -5,7 +5,8 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="mx-auto max-w-7xl px-6 py-28">
+    <section id="contact" className="scroll-mt-20 px-4 md:px-6 py-8">
+      <div className="mx-auto max-w-7xl">
       <motion.div
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -20,8 +21,7 @@ export default function Contact() {
           opportunities, and exciting projects. Feel free to reach out.
         </p>
       </motion.div>
-
-      <div className="mt-16 grid gap-10 lg:grid-cols-2">
+       <div className="mt-16 grid gap-10 lg:grid-cols-2">
         {/* Left */}
 
         <motion.div
@@ -35,8 +35,11 @@ export default function Contact() {
 
             <div>
               <h3 className="font-semibold">Email</h3>
-
-              <p className="mt-2 text-zinc-400">xxx</p>
+              <a href="mailto:niveditha.n360@gmail.com">
+                <p className="mt-2 text-zinc-400 relative text-lg font-medium after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full">
+                  niveditha.n360@gmail.com
+                </p>
+              </a>
             </div>
           </div>
 
@@ -44,9 +47,12 @@ export default function Contact() {
             <Phone className="text-blue-500" />
 
             <div>
-              <h3 className="font-semibold">Phone</h3>
-
-              <p className="mt-2 text-zinc-400">xxx</p>
+              <a href="tel:+919482456165">
+                <h3 className="font-semibold">Phone</h3>
+                <p className="mt-2 text-zinc-400 relative text-lg font-medium after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full">
+                  +91 9482456165
+                </p>
+              </a>
             </div>
           </div>
 
@@ -56,7 +62,7 @@ export default function Contact() {
             <div>
               <h3 className="font-semibold">Location</h3>
 
-              <p className="mt-2 text-zinc-400">xxx</p>
+              <p className="mt-2 text-zinc-400">Udupi, Karnataka</p>
             </div>
           </div>
         </motion.div>
@@ -95,7 +101,10 @@ export default function Contact() {
             Send Message
           </button>
         </motion.form>
+        </div>
       </div>
+
+     
     </section>
   );
 }

@@ -104,7 +104,7 @@ export const experience = {
   title: "Software Engineer I",
   company: "Codezyng Private Limited",
   location: "Udupi",
-  duration: "March 2023 – Present",
+  duration: "March 2024 – Present",
   tenure: "2+ Years",
   responsibilities: [
     "Developed enterprise web applications using React, TypeScript, and modern frontend technologies.",
