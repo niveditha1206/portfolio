@@ -8,6 +8,10 @@ export const getDurationInYears = (startDate:string) => {
 
   const years = Math.floor(totalMonths / 12);
   const months = totalMonths % 12;
+  const parts = [
+    years ? `${years} ${years === 1 ? "yr" : "yrs"}` : "",
+    months ? `${months} ${months === 1 ? "mo" : "mos"}` : "",
+  ].filter(Boolean);
 
-  return `${years}.${months} yrs`;
+  return parts.join(" ") || "0 mos";
 };

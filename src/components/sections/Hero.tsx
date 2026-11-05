@@ -5,120 +5,121 @@ import { ArrowRight } from "lucide-react";
 import { socialLinks } from "@/lib/constants";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
+const skills = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "Redux Toolkit",
+  "React Query",
+  "Tailwind CSS",
+];
+
 export default function Hero() {
   return (
     <section
       id="home"
-      className="scroll-mt-20 flex min-h-screen items-center justify-center px-4 md:px-6"
+      className="scroll-mt-24 px-6 pt-12"
     >
-      <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2">
-        {/* Left Content */}
-        <div>
+      <div className="mx-auto w-full max-w-7xl">
+        <div className="max-w-3xl">
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-4 text-lg font-medium text-blue-500"
+            transition={{ duration: 0.4 }}
+            className="text-sm font-medium tracking-[0.18em] text-blue-400"
           >
-            Hello, I'm
+            HELLO, I&apos;M
           </motion.p>
 
           <motion.h1
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 1, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-5xl font-extrabold leading-tight text-white md:text-7xl"
+            transition={{ delay: 0.1 }}
+            className="mt-4 text-5xl font-semibold tracking-tight text-white md:text-7xl"
           >
             Niveditha
-            <br />
-            <span className="text-blue-500">Nandakumar</span>
+            <span className="mt-2 block text-blue-400">Nandakumar</span>
           </motion.h1>
 
           <motion.h2
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="mt-6 text-2xl font-semibold text-zinc-300 md:text-3xl"
+            transition={{ delay: 0.2 }}
+            className="mt-6 text-xl font-medium text-zinc-300 md:text-2xl"
           >
             Software Engineer I | Frontend Developer
           </motion.h2>
 
           <motion.p
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            className="mt-6 max-w-xl text-lg leading-8 text-zinc-400"
+            transition={{ delay: 0.3 }}
+            className="mt-5 max-w-2xl text-base leading-7 text-zinc-400"
           >
             Frontend Developer with <strong>2+ years</strong> of experience
             building enterprise web applications using React, TypeScript, Redux
-            Toolkit, React Query, Material UI, and modern frontend technologies.
-            Passionate about creating scalable, reusable, and high-performance
-            user interfaces.
+            Toolkit, React Query, Material UI, and modern frontend
+            technologies. Passionate about creating scalable, reusable, and
+            high-performance user interfaces.
           </motion.p>
 
-          {/* Buttons */}
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-            className="mt-10 flex flex-wrap gap-4"
+            transition={{ delay: 0.4 }}
+            className="mt-8 flex flex-wrap items-center gap-4"
           >
             <a
               href="#projects"
-              className="flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3 font-medium text-white transition hover:bg-blue-700"
+              className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-blue-500"
             >
               View Projects
-              <ArrowRight size={18} />
+              <ArrowRight size={16} />
             </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-200 transition hover:border-zinc-500 hover:text-white"
+            >
+              Get in touch
+            </a>
+            <div className="flex items-center gap-2">
+              <a
+                href={socialLinks.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="rounded-full border border-zinc-800 p-2.5 text-zinc-400 transition hover:border-zinc-600 hover:text-white"
+              >
+                <FaGithub size={18} />
+              </a>
+              <a
+                href={socialLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="rounded-full border border-zinc-800 p-2.5 text-zinc-400 transition hover:border-zinc-600 hover:text-white"
+              >
+                <FaLinkedin size={18} />
+              </a>
+            </div>
           </motion.div>
-          <div className="mt-8 flex items-center gap-5">
-            <a
-              href={socialLinks.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              className="text-slate-400 transition hover:text-white"
-            >
-              <FaGithub size={28} />
-            </a>
 
-            <a
-              href={socialLinks.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="text-slate-400 transition hover:text-blue-400"
-            >
-              <FaLinkedin size={28} />
-            </a>
-          </div>
-
-          {/* Tech Stack */}
-          <motion.div
-            initial={{ opacity: 0 }}
+          <motion.ul
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-            className="mt-12 flex flex-wrap gap-3"
+            transition={{ delay: 0.5 }}
+            className="mt-10 flex flex-wrap gap-2"
           >
-            {[
-              "React",
-              "Next.js",
-              "TypeScript",
-              "Redux Toolkit",
-              "React Query",
-              "Tailwind CSS",
-            ].map((skill) => (
-              <span
+            {skills.map((skill) => (
+              <li
                 key={skill}
-                className="rounded-full border border-zinc-700 px-4 py-2 text-sm text-zinc-300"
+                className="rounded-full border border-zinc-800 px-3 py-1 text-sm text-zinc-400"
               >
                 {skill}
-              </span>
+              </li>
             ))}
-          </motion.div>
+          </motion.ul>
         </div>
-
-        {/* Right Content */}
       </div>
     </section>
   );

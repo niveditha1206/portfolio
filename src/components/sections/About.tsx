@@ -2,84 +2,65 @@
 
 import { motion } from "framer-motion";
 import { Briefcase, Code2, Layers, Users } from "lucide-react";
+import SectionHeading from "@/src/components/ui/SectionHeading";
 
 const highlights = [
   {
     icon: Briefcase,
     title: "2+ Years",
-    description: "Professional Experience",
+    description: "Professional experience",
   },
   {
     icon: Code2,
     title: "Enterprise Apps",
-    description: "Business & Finance Platforms",
+    description: "Business and finance platforms",
   },
   {
     icon: Layers,
     title: "Modern Frontend",
-    description: "React, TypeScript & Next.js",
+    description: "React, TypeScript, and Next.js",
   },
   {
     icon: Users,
     title: "Team Player",
-    description: "Agile Development & Collaboration",
+    description: "Agile delivery and collaboration",
   },
 ];
 
 export default function About() {
   return (
-    <section id="about" className="scroll-mt-20 px-4 md:px-6 py-8">
+    <section id="about" className="scroll-mt-24 px-6">
       <div className="mx-auto max-w-7xl">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <p className="mb-2 text-blue-500 font-semibold">ABOUT ME</p>
+        <SectionHeading
+          eyebrow="ABOUT"
+          title="Building scalable web experiences."
+          description="I'm a Frontend Developer with 2+ years of professional experience building enterprise web applications. I focus on scalable interfaces with React, TypeScript, Redux Toolkit, React Query, and Material UI, and on turning requirements into clear, reusable code."
+        />
 
-        <h2 className="text-4xl font-bold text-white">
-          Building scalable web experiences.
-        </h2>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {highlights.map((item, index) => {
+            const Icon = item.icon;
 
-        <p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-400">
-          I'm a Frontend Developer with <strong>2+ years</strong> of
-          professional experience building enterprise web applications. My
-          expertise lies in developing scalable and maintainable user interfaces
-          using React, TypeScript, Redux Toolkit, React Query, and Material UI.
-          <br />
-          <br />I enjoy transforming business requirements into intuitive,
-          high-performance applications while writing clean, reusable, and
-          maintainable code. I continuously learn modern frontend technologies
-          and best practices to deliver exceptional user experiences.
-        </p>
-      </motion.div>
-
-      <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        {highlights.map((item, index) => {
-          const Icon = item.icon;
-
-          return (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                delay: index * 0.1,
-                duration: 0.5,
-              }}
-              className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 transition hover:border-blue-500"
-            >
-              <Icon className="mb-5 text-blue-500" size={34} />
-
-              <h3 className="text-xl font-semibold">{item.title}</h3>
-
-              <p className="mt-3 text-zinc-400">{item.description}</p>
-            </motion.div>
-          );
-        })}
-      </div>
+            return (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 1, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08, duration: 0.4 }}
+                className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5"
+              >
+                <Icon className="text-blue-400" size={22} />
+                <h3 className="mt-4 text-lg font-medium text-white">
+                  {item.title}
+                </h3>
+                <p className="mt-1 text-sm leading-6 text-zinc-400">
+                  {item.description}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
