@@ -1,69 +1,54 @@
 "use client";
 
 import { projects } from "@/lib/constants";
-import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import SectionHeading from "@/src/components/ui/SectionHeading";
 
 export default function Projects() {
   return (
-    <section id="projects" className="scroll-mt-20 px-4 md:px-6 py-8">
+    <section id="projects" className="scroll-mt-24 px-6">
       <div className="mx-auto max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-blue-500 font-semibold">FEATURED PROJECTS</p>
+        <SectionHeading
+          eyebrow="PROJECTS"
+          title="Selected work and product builds"
+          description="A collection of projects that reflect my experience building responsive, data-driven web applications."
+        />
 
-          <h2 className="mt-2 text-4xl font-bold">
-            Selected work and product builds
-          </h2>
-
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-zinc-400">
-            A collection of projects that reflect my experience building
-            responsive, data-driven web applications.
-          </p>
-        </motion.div>
-
-        <div className="mt-16 space-y-16">
+        <div className="mt-8 grid gap-4">
           {projects.map((project) => (
-            <div
+            <article
               key={project.id}
-              className="rounded-3xl border border-zinc-800 bg-zinc-900 p-10"
+              className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6 md:p-8"
             >
-              <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-                <div>
-                  <h3 className="text-3xl font-bold">{project.title}</h3>
-                  <p className="mt-3 text-blue-400">{project.description}</p>
-                </div>
-              </div>
+              <h3 className="text-2xl font-semibold text-white">
+                {project.title}
+              </h3>
+              <p className="mt-3 max-w-3xl text-sm leading-6 text-zinc-400">
+                {project.description}
+              </p>
 
-              <div className="mt-14">
-                <h4 className="text-2xl font-semibold">Highlights</h4>
+              <ul className="mt-6 grid gap-3 md:grid-cols-2">
+                {project.highlights.map((highlight) => (
+                  <li
+                    key={highlight}
+                    className="flex gap-3 text-sm leading-6 text-zinc-300"
+                  >
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" />
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
 
-                <div className="mt-6 grid gap-4 md:grid-cols-2">
-                  {project.highlights.map((highlight) => (
-                    <div
-                      key={highlight}
-                      className="rounded-xl border border-zinc-800 p-5"
-                    >
-                      ✓ {highlight}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-8 flex flex-wrap gap-3">
+              <ul className="mt-6 flex flex-wrap gap-2">
                 {project.techStack.map((tech) => (
-                  <span
+                  <li
                     key={tech}
-                    className="rounded-full border border-zinc-700 px-5 py-2"
+                    className="rounded-full border border-zinc-800 px-3 py-1 text-sm text-zinc-400"
                   >
                     {tech}
-                  </span>
+                  </li>
                 ))}
-              </div>
-            </div>
+              </ul>
+            </article>
           ))}
         </div>
       </div>

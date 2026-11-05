@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, LayoutDashboard, Database, Wrench } from "lucide-react";
+import { Code2, Database, LayoutDashboard, Wrench } from "lucide-react";
+import SectionHeading from "@/src/components/ui/SectionHeading";
 
 const skillCategories = [
   {
@@ -37,58 +38,47 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="scroll-mt-20 px-4 md:px-6 py-8">
+    <section id="skills" className="scroll-mt-24 px-6">
       <div className="mx-auto max-w-7xl">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <p className="font-semibold text-blue-500">SKILLS</p>
+        <SectionHeading
+          eyebrow="SKILLS"
+          title="Technical skills"
+          description="Technologies and tools I use to build scalable, maintainable, and high-performance web applications."
+        />
 
-        <h2 className="mt-2 text-4xl font-bold text-white">Technical Skills</h2>
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
+          {skillCategories.map((category, index) => {
+            const Icon = category.icon;
 
-        <p className="mt-4 max-w-3xl text-lg leading-8 text-zinc-400">
-          Technologies and tools I use to build scalable, maintainable, and
-          high-performance web applications.
-        </p>
-      </motion.div>
-
-      <div className="mt-16 grid gap-8 md:grid-cols-2">
-        {skillCategories.map((category, index) => {
-          const Icon = category.icon;
-
-          return (
-            <motion.div
-              key={category.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                delay: index * 0.1,
-              }}
-              className="rounded-3xl border border-zinc-800 bg-zinc-900 p-8 transition hover:border-blue-500"
-            >
-              <div className="flex items-center gap-3">
-                <Icon size={28} className="text-blue-500" />
-
-                <h3 className="text-2xl font-semibold">{category.title}</h3>
-              </div>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                {category.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full border border-zinc-700 px-4 py-2 text-sm text-zinc-300 transition hover:border-blue-500 hover:text-blue-400"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          );
-        })}
-      </div>
+            return (
+              <motion.div
+                key={category.title}
+                initial={{ opacity: 1, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+                className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6"
+              >
+                <div className="flex items-center gap-3">
+                  <Icon size={18} className="text-blue-400" />
+                  <h3 className="text-lg font-medium text-white">
+                    {category.title}
+                  </h3>
+                </div>
+                <ul className="mt-5 flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <li
+                      key={skill}
+                      className="rounded-full border border-zinc-800 px-3 py-1 text-sm text-zinc-300"
+                    >
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

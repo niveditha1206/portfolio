@@ -35,25 +35,23 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 z-50 w-full border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-lg">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 md:px-6">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         <Link href="/" className="text-2xl font-bold tracking-wide text-white">
           Niveditha
         </Link>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((item) => (
             <a
               key={item.href}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="text-sm font-medium text-zinc-400 transition hover:text-blue-400"
+              className="text-sm text-zinc-400 transition hover:text-white"
             >
               {item.label}
             </a>
           ))}
-
-         
         </nav>
 
         {/* Mobile Button */}
@@ -69,7 +67,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <nav className="border-t border-zinc-800 bg-zinc-950 md:hidden">
-          <div className="flex flex-col px-4 md:px-6 py-4">
+          <div className="flex flex-col px-6 py-4">
             {navLinks.map((item) => (
               <a
                 key={item.href}
