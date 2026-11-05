@@ -40,3 +40,9 @@ export interface Profile {
   designation: string;
   shortDescription: string;
 }
+
+export interface ContactMessage {
+  name: string;
+  email: string;
+  message: string;
+}

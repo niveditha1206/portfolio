@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { socialLinks } from "@/lib/constants";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -71,8 +70,6 @@ export default function Hero() {
               View Projects
               <ArrowRight size={18} />
             </a>
-
-            
           </motion.div>
           <div className="mt-8 flex items-center gap-5">
             <a
@@ -122,22 +119,6 @@ export default function Hero() {
         </div>
 
         {/* Right Content */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.5 }}
-          className="flex justify-center"
-        >
-          <div className="relative h-96 w-72 overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900 shadow-2xl">
-            <Image
-              src="/Niveditha.jpg"
-              alt="Niveditha Nandakumar"
-              fill
-              priority
-              className="object-cover"
-            />
-          </div>
-        </motion.div>
       </div>
     </section>
   );
